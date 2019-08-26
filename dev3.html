@@ -5,7 +5,8 @@
 </head>
 <body>
     <center>
-        <h1>Daftar Planet</h1>
+    	<h1>Daftar Planet</h1>
+    	<div id= "data"></div>
     </center>
      <script>
      var planet=[
@@ -119,6 +120,26 @@
         "surface_water": "5", 
         "population": "100000000000",
      }
-     ]	 
+     ];
+    var tabel = "<table border='1|1'>";
+    for( var j in planet[0] ) {
+  		tabel += '<th>' + j + '</th>';
+ 	}
+	for (var i = 0; i < planet.length; i++) {
+    	tabel+="<tr>";
+    	tabel+="<td>"+planet[i].name+"</td>";
+    	tabel+="<td>"+planet[i].rotation_period+"</td>";
+    	tabel+="<td>"+planet[i].orbital_period+"</td>";
+    	tabel+="<td>"+planet[i].diameter+"</td>";
+       	tabel+="<td>"+planet[i].climate+"</td>";
+       	tabel+="<td>"+planet[i].gravity+"</td>";
+       	tabel+="<td>"+planet[i].terrain+"</td>";
+       	tabel+="<td>"+planet[i].surface_water+"</td>";
+       	tabel+="<td>"+planet[i].population+"</td>";
+    	tabel+="</tr>";
+	}
+	tabel+="</table>";
+document.getElementById("data").innerHTML = tabel;
+</script>	 
 </body>
 </html>
